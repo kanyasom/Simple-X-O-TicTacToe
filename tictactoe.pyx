@@ -2,21 +2,18 @@
 
 def display(board):
     print(100*" ")
-    print('   |   |')
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
     print('-----------')
-
     print(' ' + board[4] + ' | ' + board[5] + ' | ' + board[6])
     print('-----------')
     print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
-    print('   |   |')
 
 #function that can take in a player input and assign their marker as 'X' or 'O'
 def p_input():
     marker = ''
 
     while not (marker == 'X' or marker == 'O'):
-        marker = input('Player 1: Do you want to be X or O? ').upper()
+        marker = input('Player 1: Do you want to be X or O? \n').upper()
 
     if marker == 'X':
         return 'X', 'O'
@@ -66,7 +63,7 @@ def choice(board):
     position = 0
 
     while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board, position):
-        position = int(input('Choose your next position: (1-9) '))
+        position = int(input('Choose your next position: (1-9) \n'))
 
     return position
 
@@ -74,7 +71,7 @@ def choice(board):
 # and returns a boolean True if they do want to play again.
 def replay():
 
-    return input('Do you want to play again? Enter Yes or No: ').lower().startswith('y')
+    return input('Do you want to play again? Enter Yes or No: \n').lower().startswith('y')
 
 print('Welcome to Tic Tac Toe!')
 
@@ -85,7 +82,7 @@ while True:
     turn = choose_first()
     print(turn + ' will go first.')
 
-    play_game = input('Are you ready to play? Enter Yes or No.')
+    play_game = input('Are you ready to play? Enter Yes or No.\n')
 
     if play_game.lower()[0] == 'y':
         game = True
